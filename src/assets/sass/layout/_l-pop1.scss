@@ -1,0 +1,17 @@
+@use '../global' as global;
+
+.l-pop1 {
+
+
+    &__contentArea {
+        margin: 0 auto;
+    }
+
+    &__lists {
+        margin-top: 28px;
+    }
+
+    &__btnArea {
+        margin-top: 42px;
+    }
+}

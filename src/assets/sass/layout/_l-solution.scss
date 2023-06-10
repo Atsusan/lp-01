@@ -1,0 +1,14 @@
+@use '../global' as global;
+
+.l-solution {
+
+    padding-top: 80px;
+    padding-bottom: 88px;
+
+    &__title {
+    }
+
+    &__content {
+        margin-top: 58px;
+    }
+}

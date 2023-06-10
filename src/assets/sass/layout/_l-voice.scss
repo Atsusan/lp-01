@@ -1,0 +1,21 @@
+@use '../global' as global;
+
+.l-voice {
+    margin-bottom: 80px;
+
+    &__saleArea {
+        padding-top: 50px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__sale {
+    }
+
+    &__sale-main{
+
+    }
+}

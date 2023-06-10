@@ -1,0 +1,11 @@
+@use '../global' as global;
+
+.l-section {
+     margin-top: 80px;
+     margin-bottom: 80px;
+
+        @include global.mq(sp) {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+}

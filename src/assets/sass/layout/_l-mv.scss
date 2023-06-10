@@ -1,0 +1,11 @@
+@use '../global' as global;
+
+.l-mv {
+    position: relative;
+
+    &__textArea {
+        position: absolute;
+        top: 110px;
+        left: calc((130 / 1440) * 100%);
+    }
+}

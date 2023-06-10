@@ -1,0 +1,77 @@
+@use '../global' as global;
+
+.p-header {
+    display: flex;
+    align-items: center;
+    padding-left: 130px;
+    margin-right: 130px;
+
+    &__logo {
+        width: 113px;
+
+        &__link {
+            opacity: .7;
+        }
+    }
+
+    &__nav {
+        margin-left: auto;
+    }
+
+    &__lists {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:not(:first-of-type) {
+            margin-left: calc(47px - 20px);
+        }
+
+        &--login {
+            margin-left: 25px;
+            border: 1px solid global.$text-color;
+            border-radius: 32px;
+            padding: 14px 20px;
+            transition: all .3s;
+            display: block;
+            font-weight: 700;
+            font-size: 14;
+            line-height: 20px;
+            color: global.$text-color;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #4B5049;
+                color: #fff;
+            }
+        }
+
+        &--cart {
+            margin-left: 30px;
+            font-size: 1.7em;
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 14;
+        line-height: 20px;
+        color: global.$text-color;
+    }
+
+}

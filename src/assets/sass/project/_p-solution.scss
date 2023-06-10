@@ -1,0 +1,50 @@
+@use '../global' as global;
+
+.p-solution {
+    background: url(../img/bg2.png) no-repeat center center/cover;
+
+    // &__title {
+
+    // }
+
+    // &__sub-title {
+
+    // }
+
+    // &__content {
+
+    // }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__item {
+        width: 100%;
+
+        &:not(:first-child) {
+            margin-top: 32px;
+        }
+
+
+        &__box {
+            margin-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 44px;
+
+            & > .p-solution__item {
+                margin-top: 0;
+            }
+        }
+
+        &__text {
+            font-size: 24px;
+            font-weight: 500;
+            color: global.$text-color;
+        }
+    }
+}

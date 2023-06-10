@@ -1,0 +1,15 @@
+@use '../global' as global;
+
+.p-realization {
+
+    &__lists {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
+    }
+
+    &__card {
+        max-width: 167px;
+    }
+}
