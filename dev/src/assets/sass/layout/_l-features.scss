@@ -1,0 +1,11 @@
+@use '../global' as global;
+
+.l-features {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+
+    &__list {
+        padding-top: 58px;
+    }
+}

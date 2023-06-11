@@ -1,0 +1,12 @@
+@use '../global' as global;
+
+.l-faq {
+
+    &__link {
+        margin-top: 60px;
+    }
+
+    &__btnArea {
+        margin-top: 58px;
+    }
+}

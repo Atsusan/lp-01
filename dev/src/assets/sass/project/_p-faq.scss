@@ -1,0 +1,159 @@
+@use '../global' as global;
+
+.p-faq {
+
+
+    &__title {
+    }
+
+    &__sub-title {
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item {
+        width: calc((100% / 2) - 20px);
+        padding-bottom: 25px;
+        border-bottom: 1px solid #565956;
+        flex-shrink: 0;
+
+        &:nth-of-type(odd) {
+            & > .p-faq__item__title::before,
+            & > .p-faq__item__body__in::before {
+                margin-right: 15px;
+            }
+        }
+
+        &:nth-of-type(even) {
+            & > .p-faq__item__title::before,
+            & > .p-faq__item__body__in::before {
+                margin-right: 43px;
+            }
+        }
+
+        &__title,
+        &__body {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26.06px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        &__title {
+            &::before {
+                content: "Q";
+                font-family: global.$ff-en;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 23.08px;
+                margin-left: 17px;
+                color: global.$accent-color2;
+            }
+
+        }
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 16px;
+            height: 16px;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: global.$accent-color2;
+                transition: all .3s;
+            }
+
+            &::before {
+                width: 16px;
+                height: 1px;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            &::after {
+                width: 1px;
+                height: 16px;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__body {
+            display: none;
+            padding-top: 26px;
+            margin-left: 51px;
+            position: relative;
+            height: 100%;
+
+            &::before {
+                content: "A";
+                position: absolute;
+                top: 30px;
+                left: -33px;
+                font-family: global.$ff-en;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 23.08px;
+                color: global.$accent-color2;
+            }
+
+            &__in {
+                height: 100%;
+                text-align: justify;
+                position: relative;
+            }
+        }
+
+        // アコーディオン title部分の背景変更など
+        &__open {
+
+            &::before {
+                background-color: transparent;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__btnArea {
+        text-align: center;
+    }
+
+    &__btn {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28.96px;
+        color: #fff;
+        background-color: global.$accent-color;
+        padding: 20px 100px 20px 84px;
+        border-radius: 32px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 73px;
+            width: 12px;
+            height: 16px;
+            background: url(../img/btn-arrow.svg) no-repeat center center/cover;
+        }
+    }
+
+}

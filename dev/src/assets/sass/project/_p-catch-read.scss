@@ -1,0 +1,22 @@
+@use '../global' as global;
+
+.p-catch-read {
+    max-width: 1013px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 11.5px;
+        left: -8.5px;
+        width: calc((1032 / 1013) * 100%);
+        height: calc((90 / 83) * 100%);
+        background: url(../img/line1.svg) no-repeat center center/cover;
+        // l-cach-readにrelative設置
+    }
+}

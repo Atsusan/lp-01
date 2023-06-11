@@ -1,0 +1,33 @@
+@use '../global' as global;
+
+.l-about {
+
+    &__bg1 {
+        margin-top: calc(90px + 185px);
+    }
+
+    &__bg2 {
+        margin-top: calc(90px + 185px);
+    }
+
+    &__transform {
+        transform: translateY(-185px);
+        margin-bottom: -185px;
+    }
+
+    &__body {
+        margin-top: 58px;
+    }
+
+    &__text-box {
+        margin-left: -68px;
+    }
+
+    &__text-box2 {
+        margin-right: -72px;
+    }
+
+    &__img:nth-child(1) {
+        transform: translateY( 96px);
+    }
+}

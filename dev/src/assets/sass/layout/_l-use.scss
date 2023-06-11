@@ -1,0 +1,9 @@
+@use '../global' as global;
+
+.l-use {
+    margin-bottom: 82px;
+
+    &__list {
+        margin-top: 58px;
+    }
+}

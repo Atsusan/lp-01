@@ -1,0 +1,76 @@
+@use '../global' as global;
+
+.p-features {
+    background: url(../img/bg-3.jpg) no-repeat center center/cover;
+
+    &__title {
+    }
+
+    &__sub-title{
+    }
+
+    &__list {
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        gap: 85px;
+        background: #fff;
+        padding: 42px 98px 33px 103px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 64px;
+
+        & + & {
+            margin-top: 33px;
+        }
+
+        &__img {
+            width: calc( 50% - (85px / 2));
+
+            & > img {
+
+            }
+        }
+
+        &__textArea {
+            width: calc( 50% - (85px / 2));
+        }
+
+        &__point {
+            font-family: global.$ff-en;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25.64px;
+            color: #fff;
+            background-color: global.$accent-color2;
+            display: inline-block;
+            padding: 5px 23px;
+        }
+
+        &__title {
+            margin-top: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28.96px;
+        }
+
+        &__title-span {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 34.75px;
+            color: global.$accent-color2;
+        }
+
+        &__text {
+            margin-top: 12px;
+            font-weight: 400;
+            line-height: 23.17px;
+            letter-spacing: 0.08em;
+        }
+    }
+
+    &__item--reverse {
+        flex-direction: row-reverse;
+    }
+}

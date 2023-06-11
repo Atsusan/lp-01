@@ -1,0 +1,61 @@
+@use '../global' as global;
+
+.p-use {
+
+
+    &__title {
+    }
+
+    &__sub-title {
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 100%;
+
+        & + & {
+            margin-left: 36px;
+        }
+
+        &__img {
+            max-width: 268px;
+            max-height: 268px;
+            object-fit: cover;
+        }
+
+        &__textArea {
+            margin-top: 26px;
+        }
+
+        &__title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28.96px;
+            text-align: center;
+            position: relative;
+        }
+
+        &__title-span {
+            font-family: global.$ff-en;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30.77px;
+            color: global.$accent-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &__text {
+            margin-top: 14px;
+            font-weight: 400;
+            line-height: 23.17px;
+            text-align: justify;
+        }
+    }
+
+}
