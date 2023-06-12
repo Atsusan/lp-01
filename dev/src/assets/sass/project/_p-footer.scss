@@ -1,35 +1,50 @@
 @use '../global' as global;
 
 .p-footer {
+    background-color: #565956;
 
     &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
+        &__inner {
+            // width: 100%;
+        }
+
+        &__title {
+            font-family: global.$ff-en;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 36px;
+            color: #fff;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom : 0;
+                left: 0;
+                margin-top: 7px;
+                width: 72.03px;
+                height: 1px;
+                background-color: rgba(255,255,255,.4);
+            }
+        }
     }
 
-    &__contentArea {
-
-        &__item1 {
-    
-        }
-    
-        &__item2 {
-            
-        }
-    
-        &__item3 {
-    
-        }
-    
-        &__item 4 {
-    
-        }
+    &__list {
+        margin-top: 30px;
     }
 
     &__item {
 
 
-        &__title {
-
+        &__link {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: #fff;
         }
     }
 
