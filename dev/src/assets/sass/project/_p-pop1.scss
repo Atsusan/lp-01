@@ -6,11 +6,19 @@
     padding-bottom: 49px;
     position: relative;
 
+        @include global.mq(sp) {
+            padding: 32px 42px;
+        }
+
     &__bg-left {
         position: absolute;
         top: 0;
         left: calc(50% - 385px);
         height: 100%;
+
+            @include global.mq(sp) {
+                left: 0;
+            }
 
         &::before {
             content: "";
@@ -20,6 +28,11 @@
             top: 50px;
             left: -100px;
             position: absolute;
+
+                @include global.mq(sp) {
+                    background: none;
+                }
+
         }
 
         &::after {
@@ -30,6 +43,10 @@
             top: 64px;
             left: -210px;
             position: absolute;
+
+                @include global.mq(sp) {
+                    display: none;
+                }
         }
     }
 
@@ -39,6 +56,11 @@
         right: calc(50% - 385px);
         height: 100%;
 
+            @include global.mq(sp) {
+                right: 0;
+                top: 0;
+            }
+
         &::before {
             content: "";
             background: url(../img/bg-text1.png)no-repeat center center/contain;
@@ -47,6 +69,10 @@
             top: 50px;
             right: -100px;
             position: absolute;
+
+            @include global.mq(sp) {
+                    background: none;
+                }
         }
 
         &::after {
@@ -57,6 +83,10 @@
             top: 64px;
             right: -210px;
             position: absolute;
+
+                @include global.mq(sp) {
+                    display: none;
+                }
         }
     }
 
@@ -64,11 +94,15 @@
         background-color: #fff;
         padding: 50px 90px 42px;
         max-width: 770px;
+
+            @include global.mq(sp) {
+                padding: 36px 35px 34px 33px;
+            }
     }
 
     &__textArea {
-        position: relative;
         text-align: center;
+        position: relative;
 
         &__span {
             position: absolute;
@@ -77,11 +111,18 @@
             font-weight: 500;
             font-size: 16px;
             line-height: 1;
-            padding: 3px;
+            padding: 3px 4px;
             color: #fff;
             transform: rotate(-26.35deg);
             background-color: #565956;
             display: inline-block;
+
+                @include global.mq(sp) {
+                    top: -18px;
+                    left: calc(50% - 215px);
+                }
+
+
         }
     }
 
@@ -92,20 +133,55 @@
         line-height: 48px;
         letter-spacing: 0.04em;
         color: #565956;
+
+            @include global.mq(sp) {
+                font-size: 20px;
+                line-height: 28.96px;
+            }
+
+        &02 {
+            @include global.mq(sp) {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        }
     }
 
     &__text-span {
         font-size: 60px;
+
+            @include global.mq(sp) {
+                font-size: 48px;
+            }
     }
 
     &__lists {
+        text-align: center;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 18px;
     }
 
     &__item {
+
+        &:nth-of-type(2) {
+            @include global.mq(sp) {
+                order: 3;
+            }
+
+            & > p {
+                @include global.mq(sp) {
+                    padding: 10px 43px;
+                }
+            }
+        }
+        &:nth-of-type(3) {
+            @include global.mq(sp) {
+                order: 2;
+            }
+        }
 
         &__text {
             font-weight: 700;
@@ -115,6 +191,11 @@
             padding: 3px 16px;
             background-color: #565956;
             border-radius: 16px;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
         }
     }
 
@@ -124,6 +205,10 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 37px;
+
+            @include global.mq(sp) {
+                gap: 23px;
+            }
     }
 
     &__btn1 {
@@ -136,6 +221,42 @@
         padding: 16px 41px;
         position: relative;
 
+            @include global.mq(sp) {
+                font-size: 16px;
+                line-height: 23.17px;
+                padding: 8px 37px;
+            }
+
+        // スラッシュの設定
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 1px;
+            height: 16px;
+            background-color: #565956;
+        }
+
+        &::before {
+            left: calc(40px - 8.8px);
+            transform: translateY(-50%) rotate(-20deg);
+
+                @include global.mq(sp) {
+                    left: calc(40px - 12px);
+                }
+        }
+
+        &::after {
+            right: calc(40px - 8.8px);
+            transform: translateY(-50%) rotate(20deg);
+
+            @include global.mq(sp) {
+                right: calc(40px - 12px);
+            }
+        }
+
+        // 三角の設定
         &__span {
             position: absolute;
             top: 50%;
@@ -144,6 +265,15 @@
             border-width: 9px 0 9px 29px;
             border-color: transparent transparent transparent #F2F4F1;
             transform: translateY(-50%);
+
+                @include global.mq(sp) {
+                    top: 100%;
+                    right: 50%;
+                    transform: translateX(50%);
+                    border-style: solid;
+                    border-width: 16px 5px 0 5px;
+                    border-color: #F2F4F1 transparent transparent transparent;
+                }
         }
     }
 
@@ -158,6 +288,13 @@
         padding: 29px 60px 28px 36px;
         position: relative;
 
+            @include global.mq(sp) {
+                font-size: 18px;
+                line-height: 26.08px;
+                padding: 15px 50px 15px 30px;
+            }
+
+        //  arrowの設定1
         &::before {
             content: "";
             top: 50%;
@@ -167,8 +304,14 @@
             height: 16px;
             transform: translateY(-50%);
             background: url(../img/arrow1.svg) no-repeat center center/contain;
+
+                @include global.mq(sp) {
+                    right: 22px;
+                    height: 15px;
+                }
         }
 
+        // arrowの設定2
         &::after {
             content: "";
             top: 50%;
@@ -178,10 +321,31 @@
             height: 2px;
             background: url(../img/arrow2.svg)no-repeat center center/contain;
             transform: translateY(-50%);
+
+                @include global.mq(sp) {
+                    right: 25px;
+                }
         }
     }
 }
 
+@media screen and (max-width: 520px) {
+    .p-pop1__textArea__span {
+        top: -19%;
+        left: calc(50% - 150px);
+    }
+
+    .p-pop1__bg-right::before {
+        background: url(../img/sp/bg-text-sp-right.png)no-repeat center center/contain;
+        right: -1.5vw;
+        top: 14%;
+    }
+    .p-pop1__bg-left::before {
+        background: url(../img/sp/bg-text-sp-left.png)no-repeat center center/contain;
+        left: -1.5vw;
+        top: 14%;
+    }
+}
 
 @media screen and (max-width: 1440px) {
     .p-pop1 {
@@ -189,12 +353,12 @@
             &::before {
                 left: -7.08333vw;
             }
-    
+
             &::after {
                 left: -14.375vw;
             }
         }
-    
+
         &__bg-right {
             &::before {
                 right: -7.08333vw;

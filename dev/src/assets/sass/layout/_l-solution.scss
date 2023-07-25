@@ -5,10 +5,18 @@
     padding-top: 80px;
     padding-bottom: 88px;
 
+        @include global.mq(sp) {
+            padding-top: 32px;
+        }
+
     &__title {
     }
 
     &__content {
         margin-top: 58px;
+
+            @include global.mq(sp) {
+                margin-top: 28px;
+            }
     }
 }

@@ -1,19 +1,15 @@
 @use '../global' as global;
 
 .p-faq {
-
-
-    &__title {
-    }
-
-    &__sub-title {
-    }
-
     &__link {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
+
+            @include global.mq(sp) {
+                flex-direction: column;
+            }
     }
 
     &__item {
@@ -21,6 +17,10 @@
         padding-bottom: 25px;
         border-bottom: 1px solid #565956;
         flex-shrink: 0;
+
+            @include global.mq(sp) {
+                width: 100%;
+            }
 
         &:nth-of-type(odd) {
             & > .p-faq__item__title::before,
@@ -33,6 +33,10 @@
             & > .p-faq__item__title::before,
             & > .p-faq__item__body__in::before {
                 margin-right: 43px;
+
+                    @include global.mq(sp) {
+                        margin-right: 15px;
+                    }
             }
         }
 
@@ -43,12 +47,24 @@
             line-height: 26.06px;
             position: relative;
             cursor: pointer;
+            padding-right: 22px;
+            padding-left: 44px;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
         }
 
         &__title {
+            position: relative;
             &::before {
                 content: "Q";
+                top: 50%;
+                transform: translateY(-50%);
+                left: -5px;
                 font-family: global.$ff-en;
+                position: absolute;
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 23.08px;
@@ -94,7 +110,6 @@
         &__body {
             display: none;
             padding-top: 26px;
-            margin-left: 51px;
             position: relative;
             height: 100%;
 
@@ -102,7 +117,8 @@
                 content: "A";
                 position: absolute;
                 top: 30px;
-                left: -33px;
+                left: 0;
+                margin-left: 13px;
                 font-family: global.$ff-en;
                 font-weight: 400;
                 font-size: 20px;
@@ -143,6 +159,14 @@
         padding: 20px 100px 20px 84px;
         border-radius: 32px;
         position: relative;
+        display: inline-block;
+
+            @include global.mq(sp) {
+                font-size: 16px;
+                line-height: 1.6;
+                padding: 8px 46px 8px 34px;
+                font-weight: normal;
+            }
 
         &::after {
             content: "";
@@ -153,6 +177,12 @@
             width: 12px;
             height: 16px;
             background: url(../img/btn-arrow.svg) no-repeat center center/cover;
+
+                @include global.mq(sp) {
+                    right: 24px;
+                    width: 12px;
+                    height: 12px;
+                }
         }
     }
 

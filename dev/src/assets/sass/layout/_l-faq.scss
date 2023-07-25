@@ -4,9 +4,17 @@
 
     &__link {
         margin-top: 60px;
+
+            @include global.mq(sp) {
+                margin-top: 30px;
+            }
     }
 
     &__btnArea {
         margin-top: 58px;
+
+            @include global.mq(sp) {
+                margin-top: 28px;
+            }
     }
 }

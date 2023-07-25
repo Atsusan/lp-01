@@ -4,6 +4,11 @@
     padding-top: 75px;
     padding-bottom: 32px;
 
+        @include global.mq(sp) {
+            padding-top: 27px;
+            padding-bottom: 16px;
+        }
+
     &__content {
     }
 
@@ -12,10 +17,14 @@
     }
 
     &__text {
+        margin-top: 93px;
 
+            @include global.mq(sp) {
+                margin-top: 20px;
+            }
     }
 
     &__copyArea {
-        
+        margin-top: 15px;
     }
 }

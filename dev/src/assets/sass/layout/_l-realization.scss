@@ -4,5 +4,9 @@
 
     &__content {
         margin-top: 60px;
+
+            @include global.mq(sp) {
+                margin-top: 28px;
+            }
     }
 }

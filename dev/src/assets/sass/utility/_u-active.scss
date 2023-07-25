@@ -6,11 +6,14 @@
 .u-active-pc {
 	// PC時に表示
     display: none;
+}
 
-	@include global.mq("pc") {
-        display: block;
+@media screen and (min-width: 769px) {
+	.u-active-pc {
+		display: block;
 	}
 }
+
 
 .u-active-tab {
 	//タブレット以下表示
@@ -24,8 +27,20 @@
 .u-active-sp {
 	// スマホ時に表示
     display: none;
+}
 
-	@include global.mq("sp") {
-        display: block;
+@media screen and (max-width: 768px) {
+	.u-active-sp {
+		display: block;
+	}
+}
+
+.u-active-520 {
+	display: none;
+}
+
+@media screen and (max-width: 520px) {
+	.u-active-520 {
+		display: block;
 	}
 }

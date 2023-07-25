@@ -13,5 +13,9 @@
 
     &__btnArea {
         margin-top: 42px;
+
+            @include global.mq(sp) {
+                margin-top: 32px;
+            }
     }
 }

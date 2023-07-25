@@ -1,26 +1,47 @@
 @use '../global' as global;
 
 .l-about {
+    margin-top: 150px;
 
-    &__bg1 {
-        margin-top: calc(90px + 185px);
-    }
+        @include global.mq(sp) {
+            margin-top: 100px;
+        }
 
+
+    &__bg1,
     &__bg2 {
         margin-top: calc(90px + 185px);
+
+            @include global.mq(sp) {
+                margin-top: 85px;
+            }
     }
 
+    /* セクションとの間に画像を設置するための処理 */
     &__transform {
         transform: translateY(-185px);
         margin-bottom: -185px;
+
+            @include global.mq(sp) {
+                transform: translateY(-50px);
+                margin-bottom: -50px;
+            }
     }
 
     &__body {
         margin-top: 58px;
+
+            @include global.mq(sp) {
+                margin-top: 20px;
+            }
     }
 
     &__text-box {
         margin-left: -68px;
+
+            @include global.mq(sp) {
+                margin-left: 0;
+            }
     }
 
     &__text-box2 {

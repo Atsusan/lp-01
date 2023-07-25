@@ -5,5 +5,9 @@
 
     &__list {
         margin-top: 58px;
+
+            @include global.mq(sp) {
+                margin-top: 28px;
+            }
     }
 }

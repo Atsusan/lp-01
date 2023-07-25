@@ -7,6 +7,11 @@
     position: relative;
     text-align: center;
 
+        @include global.mq(sp) {
+            font-size: 20px;
+            line-height: 28.96px;
+        }
+
     &::before {
         content: "";
         position: absolute;
@@ -16,6 +21,11 @@
         transform: translateX(-50%);
         height: 1px;
         background-color: global.$text-color;
+
+            @include global.mq(sp) {
+                width: 80px;
+                bottom: -8px;
+            }
     }
 }
 
@@ -27,4 +37,9 @@
     color: global.$text-color;
     text-align: center;
     margin-top: 15px;
+
+        @include global.mq(sp) {
+            font-size: 20px;
+            line-height: 25.64px;
+        }
 }

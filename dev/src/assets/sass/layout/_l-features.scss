@@ -4,8 +4,17 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
+        @include global.mq(sp) {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
 
     &__list {
         padding-top: 58px;
+
+            @include global.mq(sp) {
+                padding-top: 28px;
+            }
     }
 }

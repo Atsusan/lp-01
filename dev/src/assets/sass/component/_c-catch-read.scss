@@ -1,11 +1,29 @@
 @use '../global' as global;
 
+// .c-catch-read {
+//     display: inline-block;
+//     background-color: global.$accent-color;
+//     color: #fff;
+//     font-size: 24px;
+//     line-height: 22px;
+//     font-weight: 700;
+//     padding: 30px 47px;
+
+//         @include global.mq(sp) {
+//             font-size: 16px;
+//             text-align: center;
+//             padding: 17px 10px 22px 12px;
+//         }
+// }
+
 .c-catch-read {
-    display: inline-block;
-    background-color: global.$accent-color;
-    color: #fff;
-    font-size: 24px;
-    line-height: 22px;
-    font-weight: 700;
-    padding: 30px 47px;
+    background: url(../img/text-img-pc.svg)no-repeat center center/contain;
+    width: 97%;
+    height: 100%;
+    margin: 0 auto;
+
+        @include global.mq(sp) {
+            background: url(../img/sp/text-img-sp.svg)no-repeat center center/contain;
+            width: 95%;
+        }
 }

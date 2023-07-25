@@ -1,7 +1,7 @@
 @use '../global' as global;
 
 .p-about {
-    padding-top: 96px;
+    overflow-x: hidden;
 
     &__title {
     }
@@ -21,10 +21,18 @@
 
     &__bg {
         background: linear-gradient(#F2F4F1 79.9%, transparent 79.9%);
+
+            @include global.mq(sp) {
+                background: linear-gradient(#F2F4F1 88.9%, transparent 88.9%);
+            }
     }
 
     &__bg2 {
         background: linear-gradient(#F2F4F1 81.6%, transparent 81.6%);
+
+            @include global.mq(sp) {
+                background: linear-gradient(#F2F4F1 88.9%, transparent 88.9%);
+            }
     }
 
     &__head {
@@ -40,8 +48,14 @@
             line-height: 61px;
         }
 
-        & > img {
+        &  img {
+            margin: 0 auto;
 
+                @include global.mq(sp) {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
         }
     }
 
@@ -49,23 +63,48 @@
     &__body2 {
         display: flex;
         justify-content: space-between;
+
+            @include global.mq(sp) {
+                flex-direction: column;
+            }
     }
 
     &__body2 {
         flex-direction: row-reverse;
     }
 
-    &__heading-title,
-    &__heading-title2 {
-        background-color: global.$accent-color2;
+    &__heading-title {
         color: #fff;
         font-size: 24px;
         font-weight: 700;
         line-height: 34px;
+
+            @include global.mq(sp) {
+                background-color: transparent;
+                font-size: 18px;
+            }
+
+        & > span {
+            display: inline;
+
+            @include global.mq(sp) {
+                display: block;
+            }
+        }
+
+        & > span:nth-of-type(2) {
+            margin-top: 8px;
+        }
+
+        & > span > span {
+            background-color: global.$accent-color2;
+            padding: 1px 8px;
+        }
     }
 
     &__heading-title {
         padding: 5px 0;
+
     }
 
     &__heading-title2 {
@@ -77,18 +116,35 @@
         max-width: 670px;
         width: 100%;
         background-color: #fff;
+
+            @include global.mq(sp) {
+                max-width: none;
+            }
     }
 
     &__text-boxArea {
         padding: 72px 129px 82px 68px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+
+            @include global.mq(sp) {
+                padding: 24px 30px;
+            }
     }
 
     &__text-boxArea2 {
         padding: 58px 72px 62px 127px;
+
+            @include global.mq(sp) {
+                padding: 26px 30px 50px;
+            }
     }
 
     &__text-box {
         margin-top: 62px;
+
+            @include global.mq(sp) {
+                margin-top: 21px;
+            }
 
         &__title {
             font-family: global.$ff-en;
@@ -97,6 +153,11 @@
             line-height: 25.64px;
             letter-spacing: 0.08em;
             position: relative;
+
+                @include global.mq(sp) {
+                    font-size: 16px;
+                    letter-spacing: 1.28px;
+                }
 
             &::before {
                 content: "";
@@ -110,15 +171,21 @@
             }
         }
 
-        &__title1 {
-            &::before {
-                width: 69%;
-            }
+        &:nth-of-type(1) > &__title1::before,
+        &:nth-of-type(1) > &__title2::before {
+            width: calc(100% - 145px);
+
+                @include global.mq(sp) {
+                    width: calc(100% - 110px);
+                }
         }
 
-        &__title2 {
-            &::before {
-                width: 51%;
+        &:nth-last-of-type(2) > &__title1::before,
+        &:nth-last-of-type(2) > &__title2::before {
+            width: calc(100% - 220px);
+
+            @include global.mq(sp) {
+                width: calc(100% - 170px);
             }
         }
 
@@ -128,6 +195,20 @@
             font-weight: 400;
             line-height: 23.17px;
             letter-spacing: 0.08em;
+
+                @include global.mq(sp) {
+                    margin-top: 8px;
+                }
+        }
+    }
+
+    &__body__img {
+        margin-top: 16px;
+        width: 100%;
+
+        & > img {
+            object-fit: cover;
+            width: 100%;
         }
     }
 
@@ -174,6 +255,10 @@
     &__footer {
         margin-top: 50px;
 
+            @include global.mq(sp) {
+                margin-top: 24px;
+            }
+
         &__main-title {
             text-align: center;
             font-weight: 500;
@@ -181,23 +266,33 @@
             line-height: 28.96px;
             position: relative;
 
+                @include global.mq(sp) {
+                    font-size: 18px;
+                    letter-spacing: 1.44px;
+                }
+
             &::before,
             &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 240px;
+                width: calc(240 / 1000 * 100%);
                 height: 1px;
                 background-color: global.$text-color;
+
+                    @include global.mq(sp) {
+                        width: 48px;
+                    }
             }
 
             &::before {
-                left: 133px;
+                // 170px で中心から計算できる。　そこから余白分を引いた数が40px
+                left: 40px;
             }
 
             &::after {
-                right: 133px;
+                right: 40px;
             }
         }
 
@@ -209,6 +304,11 @@
             font-size: 20px;
             line-height: 25.64px;
             color: #B1B6AF;
+
+                @include global.mq(sp) {
+                    font-size: 16px;
+                    margin-top: 8px; 
+                }
         }
 
         &__card {
@@ -216,6 +316,10 @@
             display: flex;
             justify-content: center;
             gap: 50px;
+
+                @include global.mq(sp) {
+                    gap: 20px;
+                }
         }
 
         &__item {
@@ -233,18 +337,60 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
             border-radius: 0px 0px 8px 8px;
             min-height: 150px;
+
+                @include global.mq(sp) {
+                    padding: 7px 12px 12px;
+                    min-height: 98px;
+                    display: flex;
+                    flex-direction: column;
+                }
         }
 
         &__title {
             font-size: 20px;
             font-weight: 700;
             line-height: 28.96px;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
         }
 
         &__text {
             margin-top: 8px;
             line-height: 23.17px;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    margin-top: auto;
+                }
         }
     }
 
+}
+
+@media screen and (max-width: 520px) {
+    .p-about__head__span {
+        font-size: 24px;
+        line-height: 30.77px;
+        top: -17px;
+    }
+
+    .p-about__heading-title {
+        max-width: 330px;
+
+        & > span {
+            display: block;
+        }
+
+        & > span:nth-of-type(2) {
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        & > span > span {
+            display: inline-block;
+        }
+    }
 }

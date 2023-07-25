@@ -7,9 +7,39 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 60px;
+
+            @include global.mq(sp) {
+                gap: 10px;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+            }
     }
 
     &__card {
         max-width: 167px;
+
+        @include global.mq(sp) {
+            max-width: 112px;
+        }
+
+
+    }
+}
+
+@media  screen and (max-width: 520px) {
+    .p-realization__item:nth-of-type(2) {
+
+       & > .p-realization__card {
+            max-width: 157px;
+
+            & img {
+                max-height: 111px;
+                margin: 0 auto;
+            }
+        }
+
+        & .c-card1__number {
+            padding: 4px 40px;
+        }
     }
 }

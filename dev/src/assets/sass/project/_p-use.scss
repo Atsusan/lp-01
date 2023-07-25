@@ -12,23 +12,48 @@
     &__list {
         display: flex;
         justify-content: space-between;
+
+            @include global.mq(sp) {
+                flex-direction: column;
+            }
     }
 
     &__item {
         width: 100%;
 
+            @include global.mq(sp) {
+                display: flex;
+                gap: 15px;
+                
+            }
+
         & + & {
             margin-left: 36px;
+
+                @include global.mq(sp) {
+                    margin-left: 0;
+                    margin-top: 16px;
+                }
         }
 
         &__img {
             max-width: 268px;
             max-height: 268px;
+            width: 100%;
             object-fit: cover;
+
+                @include global.mq(sp) {
+                    width: calc(50% - 15px);
+                }
         }
 
         &__textArea {
             margin-top: 26px;
+
+                @include global.mq(sp) {
+                    margin-top: 0;
+                    width: 50%;
+                }
         }
 
         &__title {
@@ -37,6 +62,12 @@
             line-height: 28.96px;
             text-align: center;
             position: relative;
+
+                @include global.mq(sp) {
+                    text-align: left;
+                    font-size: 18px;
+                    line-height: 1.6;
+                }
         }
 
         &__title-span {
@@ -48,6 +79,11 @@
             position: absolute;
             top: 0;
             left: 0;
+
+                @include global.mq(sp) {
+                    position: static;
+                    display: block;
+                }
         }
 
         &__text {
@@ -55,6 +91,11 @@
             font-weight: 400;
             line-height: 23.17px;
             text-align: justify;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
         }
     }
 

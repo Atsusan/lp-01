@@ -26,6 +26,10 @@
 
         &:not(:first-child) {
             margin-top: 32px;
+
+            @include global.mq(sp) {
+                margin-top: 22px;
+            }
         }
 
 
@@ -36,6 +40,12 @@
             align-items: center;
             gap: 44px;
 
+                @include global.mq(sp) {
+                    flex-direction: column;
+                    gap: 0;
+                    margin-top: 22px;
+                }
+
             & > .p-solution__item {
                 margin-top: 0;
             }
@@ -45,6 +55,16 @@
             font-size: 24px;
             font-weight: 500;
             color: global.$text-color;
+
+                @include global.mq(sp) {
+                    font-size: 16px;
+                    line-height: 23.17px;
+                    padding: 25px 40px 25px 67px;
+                }
+
+            &::before {
+                left: 25px;
+            }
         }
     }
 }

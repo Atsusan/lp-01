@@ -3,8 +3,16 @@
 .p-header {
     display: flex;
     align-items: center;
-    padding-left: 130px;
+    justify-content: space-between;
+    margin-left: 130px;
     margin-right: 130px;
+    position: relative;
+
+        @include global.mq(tab) {
+            margin-left: 0;
+            margin-right: 0;
+            justify-content: center;
+        }
 
     &__logo {
         width: 113px;
@@ -72,6 +80,47 @@
         font-size: 14px;
         line-height: 20px;
         color: global.$text-color;
+
+        &--cart {
+            font-size: 30px;
+        }
+    }
+}
+
+// スマホ時のヘッダー
+.p-header-sp {
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
     }
 
+    &__item {
+
+        &:not(:first-child) {
+            margin-left: 27px;
+        }
+
+        &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 24px;
+            width: 24px;
+
+            & > img {
+                width: 100%;
+                height: auto;
+            }
+
+            & > i {
+                font-size: 20px;
+            }
+        }
+    }
 }

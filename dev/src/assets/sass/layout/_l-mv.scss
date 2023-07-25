@@ -7,5 +7,10 @@
         position: absolute;
         top: 110px;
         left: calc((130 / 1440) * 100%);
+
+            @include global.mq(sp) {
+                top: 132px;
+                left: calc((12 / 375) * 100%);
+            }
     }
 }

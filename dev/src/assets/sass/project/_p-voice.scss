@@ -3,6 +3,10 @@
 .p-voice {
     position: relative;
 
+        @include global.mq(sp) {
+            overflow: hidden;
+        }
+
     &::before {
         content: "";
         position: absolute;
@@ -11,6 +15,13 @@
         width: 158px;
         height: 203px;
         background: url(../img/leaf_left.png) no-repeat center center/contain;
+
+            @include global.mq(sp) {
+                width: 80px;
+                height: 103px;
+                top: 34px;
+                left: calc(50% - 220px);
+            }
     }
 
     &::after {
@@ -21,6 +32,13 @@
         width: 158px;
         height: 203px;
         background: url(../img/leaf_right.png) no-repeat center center/contain;
+
+            @include global.mq(sp) {
+                width: 80px;
+                height: 103px;
+                top: 34px;
+                right: calc(50% - 220px);
+            }
     }
 
     &__bg {
@@ -33,36 +51,72 @@
         background: url(../img/img_background.png) no-repeat center center/cover;
         height: 100%;
         max-height: 582px;
+
+            @include global.mq(sp) {
+                background: url(../img/sp/bg1-sp.png) no-repeat center center/cover;
+            }
     }
 
     &__sale {
         font-size: 24px;
         line-height: 34.75px;
+
+            @include global.mq(sp) {
+                font-size: 16px;
+                line-height: 24px;
+            }
     }
 
     &__sale-main {
         font-size: 64px;
         line-height: 92.67px;
 
+            @include global.mq(sp) {
+                font-size: 32px;
+                line-height: 46.34px;
+            }
+
         &__span {
             font-size: 90px;
+
+                @include global.mq(sp) {
+                    font-size: 48px;
+                }
         }
     }
 
     &__content {
-        margin-top: 58px;
+        margin: 58px auto 0;
+        max-width: 1104px;
+
+            @include global.mq(tab) {
+                margin-top: 28px;
+                margin: 28px 12px 0;
+            }
     }
 
     &__card {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+
+            @include global.mq(sp) {
+                flex-direction: column;
+                align-items: center;
+            }
     }
 
     &__item {
+        max-width: 368px;
+        width: 100%;
+
+            @include global.mq(tab) {
+                width: 100%;
+                max-width: 500px;
+            }
 
         &__img {
             object-fit: cover;
-            width: 368px;
             position: relative;
 
             &__span {
@@ -75,7 +129,7 @@
                 font-family: global.$ff-en;
                 font-weight: 700;
                 font-size: 14px;
-                line-height:18px ;
+                line-height: 18px;
             }
 
             &  > img {
@@ -84,13 +138,17 @@
         }
 
         &__content {
-            padding: 23px 44px 48px 24px;
+            padding: 23px 44px 60px 24px;
             position: relative;
             background-color: #F2F4F1;
 
             .p-voice__item:nth-of-type(2) & {
                 background-color: #fff;
             }
+
+                @include global.mq(sp) {
+                    padding: 15px 32px 60px;
+                }
         }
 
         &__title {
@@ -100,13 +158,30 @@
             color: #fff;
             margin-bottom: 15px;
 
+                @include global.mq(sp) {
+                    font-size: 18px;
+                    line-height: 26.06px;
+                }
+
             &__span {
-                background-color: #998866;
-                display: inline-block;
-                padding: 3px 13px 6px;
+                display: block;
+
+                & > span {
+                    display: inline-block;
+                    padding: 3px 13px 6px;
+                    background-color: #998866;
+                }
 
                 &:nth-of-type(2) {
                     margin-top: 8px;
+
+                    @include global.mq(sp) {
+                        text-align: right;
+                    }
+                }
+                /* 見出しの背景を一部前幅にする処理 */
+                .p-voice__item:nth-child(3) &:first-child  > span {
+                    display: block;
                 }
             }
         }
@@ -114,12 +189,41 @@
         &__text {
             font-weight: 400;
             line-height: 23.17px;
+
+                @include global.mq(sp) {
+                    font-size: 14px;
+                    line-height: 20.27px;
+                }
         }
 
         &__name {
             position: absolute;
             bottom: 24px;
             right: 41px;
+        }
+    }
+}
+
+@media screen and (max-width: 1570px) {
+    .p-voice {
+        &::before {
+            top: 20px;
+        }
+
+        &::after {
+            top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .p-voice {
+        &::before {
+            left: calc(50% - 180px);
+        }
+
+        &::after {
+            right: calc(50% - 180px);
         }
     }
 }

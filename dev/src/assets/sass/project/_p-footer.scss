@@ -8,8 +8,27 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
+            @include global.mq(sp) {
+                margin-top: -32px; /* 2列目のmargin-topを効かせるため */
+            }
+
         &__inner {
-            // width: 100%;
+            width: calc(100% / 4);
+
+                @include global.mq(sp) {
+                    margin-top: 32px;
+                }
+
+            &:nth-of-type(odd) {
+                @include global.mq(sp) {
+                    width: calc(60% - 25px);
+                }
+            }
+            &:nth-of-type(even) {
+                @include global.mq(sp) {
+                    width: 40%;
+                }
+            }
         }
 
         &__title {
@@ -45,7 +64,47 @@
             font-size: 14px;
             line-height: 22px;
             color: #fff;
+            display: block;
+            transition: opacity .2s;
+
+            &:hover {
+                opacity: .8;
+            }
         }
     }
 
+    &__snsArea {
+        display: flex;
+        gap: 27px;
+
+            @include global.mq(sp) {
+                margin-top: 32px;
+            }
+    }
+
+    &__sns {
+        color: #FFFFFF;
+        font-size: 1.6em;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 22px;
+        color: #fff;
+    }
+
+    &__copyArea {
+        & > small {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 22px;
+            color: #fff;
+        }
+    }
 }
