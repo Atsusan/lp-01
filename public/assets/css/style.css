@@ -99,6 +99,10 @@ a {
 	color: inherit;
 }
 
+.content {
+	overflow-x: hidden;
+}
+
 .l-inner {
 	margin-left: auto;
 	margin-right: auto;
@@ -873,10 +877,6 @@ a {
 	transform: translate(-50%, -50%);
 	width: 100%;
 	z-index: 1;
-}
-
-.p-about {
-	overflow-x: hidden;
 }
 
 .p-about__bg,
