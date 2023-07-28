@@ -1599,7 +1599,7 @@ a {
 	left: 0;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 
 .u-active-pc {
 	display: block;
@@ -1670,14 +1670,6 @@ a {
 }
 
 .u-active-tab {
-	display: block;
-}
-
-}
-
-@media screen and (max-width: 768px) {
-
-.u-active-sp {
 	display: block;
 }
 
@@ -2261,6 +2253,10 @@ a {
 
 .u-hidden-sp {
 	display: none;
+}
+
+.u-active-sp {
+	display: block;
 }
 
 }
